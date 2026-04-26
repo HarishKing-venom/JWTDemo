@@ -80,6 +80,7 @@ public class AuthController : ControllerBase
         });
     }
 
+
     /// <summary>
     /// Generates a JWT token for the authenticated user
     /// 
@@ -182,5 +183,12 @@ public class AuthController : ControllerBase
     public IActionResult GetPredefinedString()
     {
         return Ok("GetData");
+    }
+
+    [HttpGet("dummy")]
+    public IActionResult DummyMethod()
+    {
+        return Ok(new { message = "This is a dummy method", timestamp = DateTime.UtcNow });
+
     }
 }
